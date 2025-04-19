@@ -35,6 +35,8 @@ export OLLAMA_API_BASE='http://<IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA>'
 
 Substitua <IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA> pelo endereço correto do seu servidor Ollama (ex: http://192.168.1.7:11434). Definir apenas OLLAMA_HOST pode resultar em erros de "model not found" devido a chamadas internas que falham em localizar o servidor correto sem OLLAMA_API_BASE.
 
+
+
 ## Como Iniciar o Projeto
 
 1.  **Clonar o Repositório:**
@@ -48,3 +50,10 @@ Substitua <IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA> pelo endereço correto do seu serv
      * No Windows (PowerShell): `.\venv\Scripts\Activate.ps1`
     * No Windows (CMD): `.\venv\Scripts\activate.bat`
     * No Linux / macOS: `source venv/bin/activate`
+
+
+# Rodar o agent estrai
+  ```bash
+pip install uv
+uv tool install web-browser-mcp-server
+  ```
