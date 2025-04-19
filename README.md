@@ -22,6 +22,19 @@ Confira as dependencias em `requirements.txt`.
 
 Voce pode conferir a documentação do `praison` em https://docs.praison.ai/mcp/airbnb
 
+## Adendo Importante (Configuração de Ollama Remoto):
+
+Com base em testes recentes (Abril de 2025), ao integrar com um servidor Ollama remoto (em outra máquina na sua rede, como um Umbrel), pode ser necessário configurar duas variáveis de ambiente no terminal onde você executará o script praison antes de iniciá-lo.
+
+Isso ocorre porque a biblioteca subjacente (litellm) pode precisar de ambas as variáveis para direcionar corretamente todas as suas chamadas internas para o servidor remoto:
+Bash
+
+# Defina ANTES de rodar seu script Python
+export OLLAMA_HOST='http://<IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA>'
+export OLLAMA_API_BASE='http://<IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA>'
+
+Substitua <IP_DO_SEU_SERVIDOR_OLLAMA>:<PORTA> pelo endereço correto do seu servidor Ollama (ex: http://192.168.1.7:11434). Definir apenas OLLAMA_HOST pode resultar em erros de "model not found" devido a chamadas internas que falham em localizar o servidor correto sem OLLAMA_API_BASE.
+
 ## Como Iniciar o Projeto
 
 1.  **Clonar o Repositório:**
