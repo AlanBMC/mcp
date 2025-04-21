@@ -1,4 +1,4 @@
-from praisonaiagents import Agent, MCP
+from praisonaiagents import Agent, MCP, PraisonAIAgents
 
 
 web_agent = Agent(
