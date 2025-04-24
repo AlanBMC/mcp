@@ -1,9 +1,14 @@
 from praisonaiagents import Agent, MCP
+import litellm
+litellm._turn_on_debug() # Use este método de debug
 
+# Resto do código...
+from praisonaiagents import Agent, MCP
+# ...
 search_agent = Agent(
-    instructions="""Voce deve me ajudar a encontrar uma casa para alugar no Airbnb""",
-    llm="ollama/gemma3:1b",
+    instructions="""You help book apartments on Airbnb.""",
+    llm="ollama/qwen2.5:0.5b",
     tools=MCP("npx -y @openbnb/mcp-server-airbnb --ignore-robots-txt")
 )
 
-search_agent.start("Eu quero uma casa com 2 quartos e 2 banheiros em São Paulo, Brasil, 3 dias 15-04-2025 ate 18-04-2025")
+search_agent.start("MUST USE airbnb_search Tool to Search. Search for Apartments in Paris for 2 nights. 04/28 - 04/30 for 2 adults. All Your Preference")
