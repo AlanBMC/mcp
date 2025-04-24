@@ -1,6 +1,6 @@
 from praisonaiagents import Agent, MCP, PraisonAIAgents
 
-mcp_tool_connector = MCP('/bin/python /home/alanb/mcp/mcps-servers/server-api.py')
+mcp_tool_connector = MCP('C:/Users/8761817/AppData/Local/Microsoft/WindowsApps/python3.11.exe C:/Users/8761817/Downloads/mcp/mcps-servers/server-api.py')
 
 
 agente_somador = Agent(
