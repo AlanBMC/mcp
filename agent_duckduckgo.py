@@ -1,13 +1,16 @@
 from praisonaiagents import Agent, MCP
-ferramenta_duckduckgo = "@nickclyde/duckduckgo-mcp-server"
-# funciona: npx -y @modelcontextprotocol/server-puppeteer 
-# Use MCP("npx -y @modelcontextprotocol/server-puppeteer") para o puppeteer
-puppeteer_agent = Agent(
-    instructions="""Você é um assistente útil que pode automatizar as interações do navegador da web.
-    Use as ferramentas disponíveis quando relevante para realizar tarefas de automação web
-""",
-    llm="ollama/gemma3:1b",
-    tools=[ferramenta_duckduckgo]
+
+
+search_agent = Agent(
+    instructions="""Você é um assistente especializado em busca web que:
+    1. Deve usar puppeteer_navigate para acessar o Google
+    2. Deve usar puppeteer_type para digitar a busca
+    3. Deve usar puppeteer_click para clicar em elementos
+    4. Deve usar puppeteer_evaluate para extrair informações
+    5. Deve organizar e apresentar os resultados de forma clara
+    """,
+    llm="ollama/qwen2.5:0.5b",
+    tools=MCP("npx -y @modelcontextprotocol/server-puppeteer")
 )
 
-puppeteer_agent.start("Liste para mim os melhores site de compras")
+search_agent.start("me mostre os principais sites de notícias do Brasil")
