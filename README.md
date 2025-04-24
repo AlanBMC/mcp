@@ -7,7 +7,7 @@ O projeto MCP (Model Context Protocol) é visando o aprendizado desta nova tecno
 
 ## Arquitetura geral (Planejamento)
 
-Arquivo central de agentes que usam tools mcps que que vão estar depender de node- ou do proprio servidor configurado na pasta servers_mcp, agentes tambem serão alimentados por bancos dados(RAG) via api( Talvez podemos usar um GraphQL ).
+Arquivo central de agentes que usam tools mcps que que vão estar depender de node- ou do proprio servidor configurado na pasta servers_mcp, agentes tambem serão alimentados por bancos dados(RAG).
 
 
 ##  Ferramentas

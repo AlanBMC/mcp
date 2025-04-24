@@ -1,0 +1,1 @@
+proximo passo é implementar: https://docs.praison.ai/features/rag#adding-knowledge-to-rag-agents
